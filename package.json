@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "bin": "./dist/cli.js",
+  "bin": "./bin/fluent-ts",
   "scripts": {
     "build": "tsc",
     "cli": "ts-node-transpile-only ./src/cli",
