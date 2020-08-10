@@ -31,5 +31,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/psimk/fluent-ts"
-  }
+  },
+  "keywords": [
+    "typescript",
+    "fluent",
+    "cli"
+  ]
 }
