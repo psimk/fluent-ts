@@ -36,10 +36,13 @@ export const readTypesFromOut = async (path: string) => {
   return types;
 };
 
-export const diffTypeMaps = (changes: FluentTypeMap, old: FluentTypeMap): FluentTypeMap =>
+export const cleanTypeMaps = (types: FluentTypeMap): FluentTypeMap =>
   Object.fromEntries(
-    Object.entries({ ...old, ...changes }).filter(([name, type]) => Boolean(name) && Boolean(type))
+    Object.entries(types).filter(([name, type]) => Boolean(name) && Boolean(type))
   );
+
+export const diffTypeMaps = (changes: FluentTypeMap, old: FluentTypeMap): FluentTypeMap =>
+  cleanTypeMaps({ ...old, ...changes });
 
 export const createEmptyType = (file: string) => ({ [format.fileToType(file)]: "" });
 

@@ -7,6 +7,7 @@ import {
   diffTypeMaps,
   readTypesFromOut,
   createEmptyType,
+  cleanTypeMaps,
 } from "./util";
 
 const getWatchedPaths = (watcher: chokidar.FSWatcher): string[] => {
@@ -37,7 +38,7 @@ export default function createWatcher({
   watcher
     .on("ready", async () => {
       // no need to check the out types, we're starting with a clean slate
-      write(createOutput(await parseTypesFromFTL(...getWatchedPaths(watcher))));
+      write(createOutput(cleanTypeMaps(await parseTypesFromFTL(...getWatchedPaths(watcher)))));
 
       if (noWatch) {
         watcher.close();
