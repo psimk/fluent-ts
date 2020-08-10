@@ -4,8 +4,6 @@
 
 ## Usage
 
-The loader should execute before `raw-loader`.
-
 ```bash
 npx fluent-ts --outDir ./node_modules/@types/fluent-ts
 ```
