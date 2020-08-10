@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
-  "bin": "./dist/cli",
+  "bin": "./dist/cli.js",
   "scripts": {
     "dev": "ts-node-transpile-only ./src",
     "cli": "ts-node-transpile-only ./src/cli",
