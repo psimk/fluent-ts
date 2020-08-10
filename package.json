@@ -1,13 +1,22 @@
 {
   "name": "fluent-ts",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "keywords": [
+    "typescript",
+    "fluent",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psimk/fluent-ts"
+  },
   "license": "MIT",
+  "main": "dist/index.js",
   "bin": "./dist/cli.js",
   "scripts": {
-    "dev": "ts-node-transpile-only ./src",
-    "cli": "ts-node-transpile-only ./src/cli",
     "build": "tsc",
+    "cli": "ts-node-transpile-only ./src/cli",
+    "dev": "ts-node-transpile-only ./src",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
@@ -27,14 +36,5 @@
     "prettier": "^1.18.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.7.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/psimk/fluent-ts"
-  },
-  "keywords": [
-    "typescript",
-    "fluent",
-    "cli"
-  ]
+  }
 }
