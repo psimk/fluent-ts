@@ -2,6 +2,7 @@ import { parse as fluentParse, Message } from "@fluent/syntax";
 import * as format from "./format";
 import dedent from "dedent";
 import * as fs from "fs-extra";
+import { type } from "os";
 
 type FluentTypeMap = Record<string, string>;
 
@@ -63,8 +64,12 @@ export const createOutput = (
             )
             .join("")}
 
-          ${format.toDeclaration(globalTypeName.trim(), typeNames.join(" | "), {
-            declare: true,
-          })}
+          ${format.toDeclaration(
+            globalTypeName.trim(),
+            typeNames.length ? typeNames.join(" | ") : "never",
+            {
+              declare: true,
+            }
+          )}
           `;
 };
