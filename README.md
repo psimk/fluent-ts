@@ -4,8 +4,22 @@
 
 ## Usage
 
+> npx
+
 ```bash
 npx fluent-ts --outDir ./node_modules/@types/fluent-ts
+```
+
+> yarn
+
+```bash
+yarn create fluent-ts --outDir ./node_modules/@types/fluent-ts
+```
+
+It is also possible to run the command in `watch` mode, using the `--watch` argument:
+
+```bash
+npx fluent-ts --outDir . --watch
 ```
 
 ## License
