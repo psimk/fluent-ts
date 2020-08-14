@@ -2,7 +2,6 @@ import { parse as fluentParse, Message } from "@fluent/syntax";
 import * as format from "./format";
 import dedent from "dedent";
 import * as fs from "fs-extra";
-import { type } from "os";
 
 type FluentTypeMap = Record<string, string>;
 
@@ -73,3 +72,7 @@ export const createOutput = (
           )}
           `;
 };
+
+export * as constants from "./constants";
+export * as webpack from "./webpack";
+export * as format from "./format";

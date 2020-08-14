@@ -5,6 +5,7 @@
 
 node_modules
 dist
+testdist
 
 yarn-error.log
 *.tmp

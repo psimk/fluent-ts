@@ -1,4 +1,4 @@
-import createWatcher from ".";
+import watcher from "./watcher";
 
 const getArgs = (args: string[]) => {
   const argIndex = args.indexOf("--outDir");
@@ -15,5 +15,5 @@ if (!outDir) {
   console.log("Please specify the output directory using the `--outDir` argument.");
   process.exit(0);
 } else {
-  createWatcher({ outDir, noWatch: !watch });
+  watcher({ outDir, noWatch: !watch });
 }

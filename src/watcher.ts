@@ -8,7 +8,8 @@ import {
   readTypesFromOut,
   createEmptyType,
   cleanTypeMaps,
-} from "./util";
+  constants,
+} from "./utils";
 
 const getWatchedPaths = (watcher: chokidar.FSWatcher): string[] => {
   let paths: string[] = [];
@@ -20,14 +21,19 @@ const getWatchedPaths = (watcher: chokidar.FSWatcher): string[] => {
   return paths;
 };
 
-type Options = { outDir?: string; outFilename?: string; noWatch?: boolean };
+type Options = constants.CommonFluentTSOptions & { noWatch?: boolean };
 
-export default function createWatcher({
-  outDir = ".",
-  outFilename = "index.d.ts",
-  noWatch = false,
-}: Options = {}) {
-  const watcher = chokidar.watch("./**/*.ftl", { ignored: /node_modules/, ignoreInitial: true });
+export default function watcher(
+  {
+    outDir = constants.DEFAULT_COMMON_FLUENT_TS_OPTIONS.outDir,
+    outFilename = constants.DEFAULT_COMMON_FLUENT_TS_OPTIONS.outFilename,
+    noWatch = false,
+  }: Options = constants.DEFAULT_COMMON_FLUENT_TS_OPTIONS
+) {
+  const watcher = chokidar.watch(`./**/*${constants.FLUENT_EXTENSION}`, {
+    ignored: /node_modules/,
+    ignoreInitial: true,
+  });
 
   const out = resolve(outDir, outFilename);
   fs.ensureFileSync(out);
